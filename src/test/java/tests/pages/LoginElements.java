@@ -21,4 +21,8 @@ public class LoginElements {
     public WebElement getOrangeHRMDashboard(){
         return driver().findElement(By.xpath("//span//*[text()='Dashboard']"));
     }
+
+    public WebElement getFailedLoginMessage(){
+        return driver().findElement(By.xpath("//*[text()='Invalid credentials']"));
+    }
 }

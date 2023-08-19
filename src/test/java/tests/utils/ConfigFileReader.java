@@ -16,4 +16,9 @@ public class ConfigFileReader {
             return null;
         }
     }
+
+    public static String getData(String data){
+        String config = ConfigReader(data);
+        return config;
+    }
 }

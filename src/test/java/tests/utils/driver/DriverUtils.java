@@ -3,10 +3,7 @@ package tests.utils.driver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static tests.utils.driver.DriverBuilder.*;
@@ -76,18 +73,22 @@ public class DriverUtils {
         try {
             if (driver() != null) {
                 driver().quit();
-//                getScenario().log(">>> Browser was closed. <<<");
+                getScenario().log(">>> Browser was closed. <<<");
             }
         } catch (WebDriverException e) {
-//            getScenario().log(">>> Browser could not be closed, due to WebDriverException <<<");
+            getScenario().log(">>> Browser could not be closed, due to WebDriverException <<<");
         }
         threadDriver.remove();
-    }
-    public static void maximizeWindow(){
-        driver().manage().window().maximize();
     }
 
     public static void navigateToUrl(String url) {
         driver().get(url);
     }
+
+    public static void clearCookies(){
+        driver().manage().deleteAllCookies();
+        getScenario().log(">>> Cookies cleared successfully. <<<");
+    }
+
+
 }

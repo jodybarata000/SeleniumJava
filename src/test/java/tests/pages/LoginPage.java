@@ -1,7 +1,6 @@
 package tests.pages;
 
 import static tests.utils.ConfigFileReader.*;
-
 import static tests.utils.ComponentUtils.*;
 import static tests.utils.driver.DriverUtils.navigateToUrl;
 import static tests.utils.WaitUtils.waitUntilElementIsDisplayed;
@@ -28,8 +27,12 @@ public class LoginPage {
     }
 
     public LoginPage navigateToPage() {
-        String url = ConfigReader("LOGIN_URL");
-        navigateToUrl(url);
+        navigateToUrl(getData("LOGIN_URL"));
+        return this;
+    }
+
+    public LoginPage verifyUserFailedLogin(){
+        waitUntilElementIsDisplayed(LoginElements.getFailedLoginMessage());
         return this;
     }
 }
