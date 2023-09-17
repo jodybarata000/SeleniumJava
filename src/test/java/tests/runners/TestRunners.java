@@ -13,5 +13,4 @@ import io.cucumber.junit.CucumberOptions;
         plugin = {"summary","pretty","html:target/cucumber-reports","json:target/cucumber-reports"}
 )
 public class TestRunners {
-
 }
