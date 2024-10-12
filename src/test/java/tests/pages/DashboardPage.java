@@ -20,4 +20,9 @@ public class DashboardPage {
         clickElement(DashboardElements.getLeaveListIcon());
         return this;
     }
+
+    public DashboardPage clickTimesheets(){
+        clickElement(DashboardElements.getTimesheetsIcon());
+        return this;
+    }
 }
