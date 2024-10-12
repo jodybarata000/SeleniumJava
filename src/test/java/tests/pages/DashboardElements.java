@@ -17,4 +17,8 @@ public class DashboardElements {
     public WebElement getLeaveListIcon(){
         return driver().findElement(By.xpath("//*[@title='Leave List' and @type='button']"));
     }
+
+    public WebElement getTimesheetsIcon(){
+        return driver().findElement(By.xpath("//*[@title='Timesheets' and @type='button']"));
+    }
 }
