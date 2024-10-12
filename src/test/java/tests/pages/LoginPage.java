@@ -26,10 +26,6 @@ public class LoginPage {
         clickElement(LoginElements.getLoginButton());
         return this;
     }
-    public LoginPage verifyUserSuccessLogin(){
-        waitUntilElementIsDisplayed(LoginElements.getOrangeHRMDashboard());
-        return this;
-    }
 
     public LoginPage navigateToPage() {
         navigateToUrl(getData("LOGIN_URL"));
