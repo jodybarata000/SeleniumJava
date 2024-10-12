@@ -3,11 +3,15 @@ Feature: Login Page
   Background: Open home page
     Given User navigated to the OrangeHRM Login page
 
+#  @Test
+  #Login1
   Scenario: Login Valid Credentials
     When User Enters Valid username and password
     And User Clicks Login Button
     Then User redirects to OrangeHRM Dashboard
-  @Test
+
+#  @Test
+  #Login2
   Scenario Outline: Login Invalid Credentials
     When User Enters Invalid "<Username>" and "<Password>"
     And User Clicks Login Button

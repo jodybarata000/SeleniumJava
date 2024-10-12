@@ -21,10 +21,6 @@ public class LoginElements {
         return driver().findElement(By.xpath("//*[@type='submit']"));
     }
 
-    public WebElement getOrangeHRMDashboard(){
-        return driver().findElement(By.xpath("//span//*[text()='Dashboard']"));
-    }
-
     public WebElement getFailedLoginMessage(){
         return driver().findElement(By.xpath("//*[text()='Invalid credentials']"));
     }
