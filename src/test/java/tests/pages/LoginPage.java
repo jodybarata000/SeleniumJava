@@ -8,11 +8,6 @@ import static tests.utils.WaitUtils.waitUntilElementIsDisplayed;
 public class LoginPage {
     private final LoginElements LoginElements = new LoginElements();
 
-    public LoginPage verifySuccessLoadLogo(){
-        waitUntilElementIsDisplayed(LoginElements.getCompanyLogo());
-        return this;
-    }
-
     public LoginPage enterLoginUsername(String Username){
         enterTextToField(LoginElements.getUsername(),Username);
         return this;
@@ -26,18 +21,22 @@ public class LoginPage {
         clickElement(LoginElements.getLoginButton());
         return this;
     }
-    public LoginPage verifyUserSuccessLogin(){
-        waitUntilElementIsDisplayed(LoginElements.getOrangeHRMDashboard());
-        return this;
-    }
 
     public LoginPage navigateToPage() {
         navigateToUrl(getData("LOGIN_URL"));
+        waitUntilElementIsDisplayed(LoginElements.getCompanyLogo());;
         return this;
     }
 
     public LoginPage verifyUserFailedLogin(){
         waitUntilElementIsDisplayed(LoginElements.getFailedLoginMessage());
+        return this;
+    }
+
+    public LoginPage loginToDashboardPage(String Username,String Password){
+        enterTextToField(LoginElements.getUsername(),Username);
+        enterTextToField(LoginElements.getPassword(),Password);
+        clickElement(LoginElements.getLoginButton());
         return this;
     }
 }
