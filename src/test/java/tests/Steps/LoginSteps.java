@@ -9,7 +9,9 @@ public class LoginSteps {
 
     @Given("User navigated to the OrangeHRM Login page")
     public void userNavigatedtoTheOrangeHRMLoginPage() {
-        LoginPage.navigateToPage();
+        LoginPage
+                .navigateToPage()
+                .verifySuccessLoadLogo();
     }
 
     @When("User Enters Valid username and password")

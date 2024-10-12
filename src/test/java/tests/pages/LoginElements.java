@@ -6,12 +6,15 @@ import org.openqa.selenium.WebElement;
 import static tests.utils.driver.DriverUtils.driver;
 
 public class LoginElements {
+    public WebElement getCompanyLogo(){
+        return driver().findElement(By.xpath("//*[@alt='company-branding']"));
+    }
     public WebElement getUsername(){
-        return driver().findElement(By.xpath("//*[@name='username']"));
+        return driver().findElement(By.name("username"));
     }
 
     public WebElement getPassword(){
-        return driver().findElement(By.xpath("//*[@name='password']"));
+        return driver().findElement(By.name("password"));
     }
 
     public WebElement getLoginButton(){
