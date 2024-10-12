@@ -40,5 +40,12 @@ public class LoginPage {
         waitUntilElementIsDisplayed(LoginElements.getFailedLoginMessage());
         return this;
     }
+
+    public LoginPage loginToDashboardPage(String username, String password) {
+        enterTextToField(LoginElements.getUsername(),username);
+        enterTextToField(LoginElements.getPassword(),password);
+        clickElement(LoginElements.getLoginButton());
+        return this;
+    }
 }
 
