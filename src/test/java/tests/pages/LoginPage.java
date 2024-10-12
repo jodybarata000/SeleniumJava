@@ -8,6 +8,11 @@ import static tests.utils.WaitUtils.waitUntilElementIsDisplayed;
 public class LoginPage {
     private final LoginElements LoginElements = new LoginElements();
 
+    public LoginPage verifySuccessLoadLogo(){
+        waitUntilElementIsDisplayed(LoginElements.getCompanyLogo());
+        return this;
+    }
+
     public LoginPage enterLoginUsername(String Username){
         enterTextToField(LoginElements.getUsername(),Username);
         return this;
