@@ -15,4 +15,5 @@ public class LeavePage {
         waitUntilElementIsDisplayed(LeaveElements.getTitleLeaveList());
         return this;
     }
+
 }

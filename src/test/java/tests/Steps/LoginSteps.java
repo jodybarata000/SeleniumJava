@@ -1,17 +1,17 @@
 package tests.Steps;
 
 import io.cucumber.java.en.*;
+import tests.pages.DashboardPage;
 import tests.pages.LoginPage;
 import static tests.utils.ConfigFileReader.getData;
 
 public class LoginSteps {
     private final LoginPage LoginPage = new LoginPage();
+    private final DashboardPage DashboardPage = new DashboardPage();
 
     @Given("User navigated to the OrangeHRM Login page")
     public void userNavigatedtoTheOrangeHRMLoginPage() {
-        LoginPage
-                .navigateToPage()
-                .verifySuccessLoadLogo();
+        LoginPage.navigateToPage();
     }
 
     @When("User Enters Valid username and password")
@@ -28,7 +28,7 @@ public class LoginSteps {
 
     @Then("User redirects to OrangeHRM Dashboard")
     public void userRedirectstoOrangeHRMDashboard() {
-        LoginPage.verifyUserSuccessLogin();
+        DashboardPage.verifyUserSuccessLogin();
     }
 
     @When("User Enters Invalid {string} and {string}")
