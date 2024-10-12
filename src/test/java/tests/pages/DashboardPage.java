@@ -15,4 +15,9 @@ public class DashboardPage {
         clickElement(DashboardElements.getAssignLeaveIcon());
         return this;
     }
+
+    public DashboardPage clickLeaveList(){
+        clickElement(DashboardElements.getLeaveListIcon());
+        return this;
+    }
 }

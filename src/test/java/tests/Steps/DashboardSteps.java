@@ -28,4 +28,14 @@ public class DashboardSteps {
     public void userRedirectsToAssignLeavePage() {
         LeavePage.verifyAssignLeavePage();
     }
+
+    @When("User click Quick Launch Leave List")
+    public void userClickQuickLaunchLeaveList() {
+        DashboardPage.clickLeaveList();
+    }
+
+    @Then("User redirects to Leave List Page")
+    public void userRedirectsToLeaveListPage() {
+        LeavePage.verifyLeaveListPage();
+    }
 }

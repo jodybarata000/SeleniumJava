@@ -9,4 +9,9 @@ public class LeaveElements {
     public WebElement getTitleAssignLeave(){
         return driver().findElement(By.xpath("//*[text()='Assign Leave']"));
     }
+
+
+    public WebElement getTitleLeaveList(){
+        return driver().findElement(By.xpath("//*[text()='Leave List']"));
+    }
 }

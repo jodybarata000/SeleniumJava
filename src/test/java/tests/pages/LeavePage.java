@@ -10,4 +10,10 @@ public class LeavePage {
         waitUntilElementIsDisplayed(LeaveElements.getTitleAssignLeave());
         return this;
     }
+
+    public LeavePage verifyLeaveListPage(){
+        waitUntilElementIsDisplayed(LeaveElements.getTitleLeaveList());
+        return this;
+    }
+
 }
