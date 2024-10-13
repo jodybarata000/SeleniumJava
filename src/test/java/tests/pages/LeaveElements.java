@@ -13,4 +13,12 @@ public class LeaveElements {
     public WebElement getTitleLeaveList(){
         return driver().findElement(By.xpath("//*[text()='Leave List']"));
     }
+
+    public WebElement getTitleApplyLeave(){
+        return driver().findElement(By.xpath("//*[text()='Apply Leave']"));
+    }
+
+    public WebElement getTitleMyLeaveList(){
+        return driver().findElement(By.xpath("//*[text()='My Leave List']"));
+    }
 }

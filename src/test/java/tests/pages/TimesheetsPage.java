@@ -10,4 +10,9 @@ public class TimesheetsPage {
         waitUntilElementIsDisplayed(TimesheetsElements.getTitleTimesheetsList());
         return this;
     }
+
+    public TimesheetsPage verifyMyTimesheetsPage(){
+        waitUntilElementIsDisplayed(TimesheetsElements.getTitleMyTimesheet());
+        return this;
+    }
 }
