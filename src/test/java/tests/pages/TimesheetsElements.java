@@ -9,4 +9,8 @@ public class TimesheetsElements {
     public WebElement getTitleTimesheetsList(){
         return driver().findElement(By.xpath("//*[text()='Timesheets Pending Action']"));
     }
+
+    public WebElement getTitleMyTimesheet(){
+        return driver().findElement(By.xpath("//*[text()='My Timesheet']"));
+    }
 }

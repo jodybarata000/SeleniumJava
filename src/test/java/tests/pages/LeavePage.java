@@ -16,4 +16,13 @@ public class LeavePage {
         return this;
     }
 
+    public LeavePage verifyApplyLeavePage(){
+        waitUntilElementIsDisplayed(LeaveElements.getTitleApplyLeave());
+        return this;
+    }
+
+    public LeavePage verifyMyLeavePage(){
+        waitUntilElementIsDisplayed(LeaveElements.getTitleMyLeaveList());
+        return this;
+    }
 }

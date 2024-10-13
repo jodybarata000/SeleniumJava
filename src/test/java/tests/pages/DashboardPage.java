@@ -25,4 +25,19 @@ public class DashboardPage {
         clickElement(DashboardElements.getTimesheetsIcon());
         return this;
     }
+
+    public DashboardPage clickApplyLeave(){
+        clickElement(DashboardElements.getApplyLeaveIcon());
+        return this;
+    }
+
+    public DashboardPage clickMyLeave(){
+        clickElement(DashboardElements.getMyLeaveIcon());
+        return this;
+    }
+
+    public DashboardPage clickMyTimesheet(){
+        clickElement(DashboardElements.getMyTimesheetIcon());
+        return this;
+    }
 }

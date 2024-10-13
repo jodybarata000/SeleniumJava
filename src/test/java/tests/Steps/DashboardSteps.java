@@ -50,4 +50,34 @@ public class DashboardSteps {
     public void userRedirectsToTimesheetPage() {
         TimesheetsPage.verifyTimesheetsPage();
     }
+
+    @When("User click Quick Launch Apply Leave")
+    public void userClickQuickLaunchApplyLeave() {
+        DashboardPage.clickApplyLeave();
+    }
+
+    @Then("User redirects to Apply Leave Page")
+    public void userRedirectsToApplyLeavePage() {
+        LeavePage.verifyApplyLeavePage();
+    }
+
+    @When("User click Quick Launch My Leave")
+    public void userClickQuickLaunchMyLeave() {
+        DashboardPage.clickMyLeave();
+    }
+
+    @Then("User redirects to My Leave Page")
+    public void userRedirectsToMyLeavePage() {
+        LeavePage.verifyMyLeavePage();
+    }
+
+    @When("User click Quick Launch My Timesheet")
+    public void userClickQuickLaunchMyTimesheet() {
+        DashboardPage.clickMyTimesheet();
+    }
+
+    @Then("User redirects to My Timesheet Page")
+    public void userRedirectsToMyTimesheetPage() {
+        TimesheetsPage.verifyMyTimesheetsPage();
+    }
 }

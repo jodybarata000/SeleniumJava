@@ -21,4 +21,16 @@ public class DashboardElements {
     public WebElement getTimesheetsIcon(){
         return driver().findElement(By.xpath("//*[@title='Timesheets' and @type='button']"));
     }
+
+    public WebElement getApplyLeaveIcon(){
+        return driver().findElement(By.xpath("//*[@title='Apply Leave' and @type='button']"));
+    }
+
+    public WebElement getMyLeaveIcon(){
+        return driver().findElement(By.xpath("//*[@title='My Leave' and @type='button']"));
+    }
+
+    public WebElement getMyTimesheetIcon(){
+        return driver().findElement(By.xpath("//*[@title='My Timesheet' and @type='button']"));
+    }
 }
