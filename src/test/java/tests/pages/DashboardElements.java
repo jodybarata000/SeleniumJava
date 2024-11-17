@@ -41,4 +41,12 @@ public class DashboardElements {
     public WebElement getCandidateInterview(){
         return driver().findElement(By.xpath("//*[text()='(1) Pending Self Review']"));
     }
+
+    public WebElement getPIMMenu(){
+        return driver().findElement(By.xpath("//*[text()='PIM']"));
+    }
+
+    public WebElement getEmployeeInformationSection(){
+        return driver().findElement(By.xpath("//*[text()='Employee Information']"));
+    }
 }

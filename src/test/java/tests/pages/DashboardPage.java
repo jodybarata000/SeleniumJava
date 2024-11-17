@@ -40,4 +40,14 @@ public class DashboardPage {
         clickElement(DashboardElements.getMyTimesheetIcon());
         return this;
     }
+
+    public DashboardPage clickPIMMenu(){
+        clickElement(DashboardElements.getPIMMenu());
+        return this;
+    }
+
+    public DashboardPage verifyEmployeeInformationSection(){
+        waitUntilElementIsDisplayed(DashboardElements.getEmployeeInformationSection());
+        return this;
+    }
 }
