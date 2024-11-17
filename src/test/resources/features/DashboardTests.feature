@@ -4,6 +4,16 @@ Feature: Dashboard Page
     Given User Log in with User admin to OrangeHrm Dashboard
 
   @Test
+  Scenario: Test Redirect Pending Review via My Actions
+    When User click Pending Review on My Actions
+    Then User redirects to My Review page
+
+  @Test
+  Scenario: Test Redirect Candidate to interview via My Actions
+    When User click Candidate to interview on My Actions
+    Then User redirects to Candidate Recruitment page
+
+  @Test
   Scenario: Test Redirect Assign Leave via Quick Launch
     When User click Quick Launch Assign Leave
     Then User redirects to Assign Leave Page
