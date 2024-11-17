@@ -80,4 +80,20 @@ public class DashboardSteps {
     public void userRedirectsToMyTimesheetPage() {
         TimesheetsPage.verifyMyTimesheetsPage();
     }
+
+    @When("User click Pending Review on My Actions")
+    public void userClickPendingReviewOnMyActions() {
+    }
+
+    @Then("User redirects to My Review page")
+    public void userRedirectsToMyReviewPage() {
+    }
+
+    @When("User click Candidate to interview on My Actions")
+    public void userClickCandidateToInterviewOnMyActions() {
+    }
+
+    @Then("User redirects to Candidate Recruitment page")
+    public void userRedirectsToCandidateRecruitmentPage() {
+    }
 }

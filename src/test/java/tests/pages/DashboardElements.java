@@ -33,4 +33,12 @@ public class DashboardElements {
     public WebElement getMyTimesheetIcon(){
         return driver().findElement(By.xpath("//*[@title='My Timesheet' and @type='button']"));
     }
+
+    public WebElement getPendingInterview(){
+        return driver().findElement(By.xpath("//*[contains(text(), 'Pending Self Review')]"));
+    }
+
+    public WebElement getCandidateInterview(){
+        return driver().findElement(By.xpath("//*[text()='(1) Pending Self Review']"));
+    }
 }
