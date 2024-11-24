@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 
 import java.time.Duration;
 
+import static tests.steps.Hooks.getScenario;
 import static tests.utils.WaitUtils.waitForDuration;
 import static tests.utils.WaitUtils.waitUntilElementToBeClickable;
 import static tests.utils.driver.DriverUtils.*;
@@ -36,4 +37,13 @@ public class ComponentUtils {
         jsExecutor().executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public static void makeScreenshot(String screenshotName) {
+        if (!isBrowserAlive()) {
+            getScenario().log(">>> Browser is not available. Skipping Screenshot <<<");
+            return;
+        }
+        getScenario().log(">>> Visual information below <<<");
+        byte[] screenshot = ((TakesScreenshot) driver()).getScreenshotAs(OutputType.BYTES);
+        getScenario().attach(screenshot, "image/png", "Failing Screenshot: " + screenshotName);
+    }
 }

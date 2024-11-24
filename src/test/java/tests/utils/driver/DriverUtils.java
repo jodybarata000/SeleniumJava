@@ -10,7 +10,7 @@ import static tests.utils.driver.DriverBuilder.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static tests.utils.WaitUtils.setImplicitWaitSeconds;
 import static tests.utils.WaitUtils.setPageLoadWaitSeconds;
-import static tests.Steps.Hooks.getScenario;
+import static tests.steps.Hooks.getScenario;
 
 import java.time.Duration;
 

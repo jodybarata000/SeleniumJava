@@ -1,6 +1,7 @@
-package tests.Steps;
+package tests.steps;
 
 import io.cucumber.java.en.*;
+import io.qameta.allure.Step;
 import tests.pages.DashboardPage;
 import tests.pages.PIMPage;
 import tests.utils.RandomUtils;
@@ -13,6 +14,7 @@ public class PIMSteps {
     private final RandomUtils random = new RandomUtils();
 
     @Then("User navigates to PIM Page")
+    @Step("User navigates to PIM Page")
     public void userNavigatesToPIMPage() {
         DashboardPage
                 .clickPIMMenu()
@@ -21,11 +23,13 @@ public class PIMSteps {
     }
 
     @When("User navigates to the Add Employee page")
+    @Step("User navigates to the Add Employee page")
     public void userNavigatesToTheAddEmployeePage() {
         PIMPage.clickAddEmployeeBtn();
     }
 
     @And("User adds in the employee details form with valid information")
+    @Step("User adds in the employee details form with valid information")
     public void userAddsInTheEmployeeDetailsFormWithValidInformation() {
         PIMPage
                 .enterFirstName(random.getFirstName())
@@ -34,6 +38,7 @@ public class PIMSteps {
     }
 
     @Then("Confirmation message Successfully added is displayed")
+    @Step("Confirmation message Successfully added is displayed")
     public void confirmationMessageSuccessfullyAddedIsDisplayed() {
         PIMPage
                 .clickSaveButton()
@@ -41,6 +46,7 @@ public class PIMSteps {
     }
 
     @And("User adds in the employee details form with Login Details")
+    @Step("User adds in the employee details form with Login Details")
     public void userAddsInTheEmployeeDetailsFormWithLoginDetails() {
         PIMPage
                 .enterFirstName(random.getFirstName())
