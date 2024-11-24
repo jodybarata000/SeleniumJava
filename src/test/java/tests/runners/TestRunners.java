@@ -9,8 +9,12 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         tags = "@Test",
         features = "./src/test/resources/features",
-        glue = "tests.Steps",
-        plugin = {"summary","pretty","html:target/cucumber-reports","json:target/cucumber-reports"}
+        glue = "tests.steps",
+        plugin = {
+                "pretty",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+                "json:target/cucumber.json"
+        }
 )
 public class TestRunners {
 }

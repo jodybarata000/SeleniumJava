@@ -1,13 +1,13 @@
-package tests.Steps;
+package tests.steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 import static tests.utils.BrowserActions.*;
+import static tests.utils.ComponentUtils.makeScreenshot;
+import static tests.utils.UrlUtils.printFailInfo;
 import static tests.utils.driver.DriverUtils.*;
-
-import java.time.Duration;
 
 public class Hooks {
     private static final ThreadLocal<Scenario> threadScenario = new ThreadLocal<>();
@@ -45,6 +45,10 @@ public class Hooks {
                 setTestName(scenario.getName());
                 clearCookies();
                 closeAllAdditionalTabs();
+                if (scenario.isFailed()) {
+                    printFailInfo();
+                    makeScreenshot(getTestName());
+                }
             }
             quitBrowser();
         }catch (AssertionError | Exception e) {
