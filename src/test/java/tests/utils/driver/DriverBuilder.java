@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class DriverBuilder {
-    public static String isHeadless = System.getProperty("headless", "false");
+    public static String isHeadless = System.getProperty("headless", "true");
     public static WebDriver setupDriver() {
         WebDriverManager.chromedriver().setup();
         DesiredCapabilities dc = new DesiredCapabilities();
