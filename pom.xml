@@ -15,8 +15,8 @@
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
         <junit.platform.version>1.10.2</junit.platform.version>
         <cucumber.version>7.14.0</cucumber.version>
-        <selenium.version>4.14.1</selenium.version>
-        <webdriver.version>5.8.0</webdriver.version>
+        <selenium.version>4.21.0</selenium.version>
+        <webdriver.version>5.9.2</webdriver.version>
         <faker.version>1.0.2</faker.version>
         <aspectj.version>1.9.19</aspectj.version>
         <allure.version>2.24.0</allure.version>
