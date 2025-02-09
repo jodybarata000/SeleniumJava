@@ -4,27 +4,72 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
+import static tests.steps.Hooks.getScenario;
 
 public class DriverBuilder {
-    public static String isHeadless = System.getProperty("headless", "true");
-    public static WebDriver setupDriver() {
-        WebDriverManager.chromedriver().setup();
-        DesiredCapabilities dc = new DesiredCapabilities();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--window-size=1366,768");
-        chromeOptions.addArguments("--disable-gpu");
-        chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--disable-dev-shm-usage");
-        chromeOptions.addArguments("--remote-allow-origins=*");
 
-        if (isHeadless.equals("true")) {
-            chromeOptions.addArguments("--headless");
+    private static final String browser = System.getProperty("browser", "chrome").toLowerCase();
+    private static final boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+
+    public static WebDriver setupDriver() {
+        WebDriver driver;
+
+        switch (browser) {
+            case "firefox":
+                driver = setupFirefox();
+                break;
+            case "edge":
+                driver = setupEdge();
+                break;
+            case "chrome":
+            default:
+                driver = setupChrome();
+                break;
+        }
+        getScenario().log("Launching " + browser.toUpperCase() + " in headless mode: " + isHeadless);
+        return driver;
+    }
+
+    private static WebDriver setupChrome() {
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--window-size=1366,768", "--disable-gpu", "--disable-notifications", "--no-sandbox", "--disable-dev-shm-usage");
+
+        if (isHeadless) {
+            options.addArguments("--headless=new");
+        }
+        return new ChromeDriver(options);
+    }
+
+    private static WebDriver setupFirefox() {
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--width=1366", "--height=768");
+
+        // Disable notifications (correct method for Firefox)
+        options.addPreference("dom.webnotifications.enabled", false);
+        options.addPreference("permissions.default.desktop-notification", 2);
+
+        if (isHeadless) {
+            options.addArguments("--headless");
         }
 
-        dc.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-        dc.setCapability("browserName", "chrome");
-        return new ChromeDriver(chromeOptions);
+        return new FirefoxDriver(options);
+    }
+
+    private static WebDriver setupEdge() {
+        WebDriverManager.edgedriver().setup();
+        EdgeOptions options = new EdgeOptions();
+        options.addArguments("--window-size=1366,768", "--disable-gpu", "--disable-notifications");
+
+        if (isHeadless) {
+            options.addArguments("--headless");
+        }
+        return new EdgeDriver(options);
     }
 }
